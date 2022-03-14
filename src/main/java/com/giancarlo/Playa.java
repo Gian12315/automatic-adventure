@@ -17,6 +17,7 @@ public class Playa extends Cuadro {
     Barco barco;
     Planta planta;
     Palmera palmera;
+    Sombrilla sombrilla;
     Tapete tapete;
     Persona persona1;
     Persona persona2;
@@ -30,6 +31,7 @@ public class Playa extends Cuadro {
         barco = new Barco(100, 80, 200, Color.WHITE, 120);
         planta = new Planta();
         palmera = new Palmera();
+        sombrilla = new Sombrilla();
         tapete = new Tapete();
         persona1 = new Persona(100, 700, 300);
         persona2 = new Persona(150, 750, 300);
@@ -65,9 +67,14 @@ public class Playa extends Cuadro {
 
         palmera.dibujarPalmera(g, 60, 300, 1.0);
         palmera.dibujarPalmera(g, 110, 300, 1.0);
-        palmera.dibujarPalmera(g, 670, 300, 1.0);
-        palmera.dibujarPalmera(g, 720, 300, 1.0);
+        palmera.dibujarPalmera(g, 160, 300, 1.0);
+        palmera.dibujarPalmera(g, 210, 300, 1.0);
+        palmera.dibujarPalmera(g, 590, 300, 1.0);
+        palmera.dibujarPalmera(g, 640, 300, 1.0);
+        palmera.dibujarPalmera(g, 690, 300, 1.0);
+        palmera.dibujarPalmera(g, 730, 300, 1.0);
 
+        sombrilla.dibujarSombrilla(g, 320, 320, Color.WHITE, Color.LIGHT_GRAY, 1.0);
         tapete.dibujarTapete(g, 300, 370, Color.RED, Color.BLUE, 1.4);
         tapete.dibujarTapete(g, 430, 370, Color.GREEN, Color.RED, 1.4);
 
