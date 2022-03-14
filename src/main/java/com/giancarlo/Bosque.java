@@ -22,7 +22,7 @@ public class Bosque extends Cuadro {
     Nube nube;
     Casa casa;
     Calle calle;
-    Planta planta;
+    Valla valla;
     Arbol arbol;
     Carro carro;
 
@@ -38,6 +38,7 @@ public class Bosque extends Cuadro {
             lluvia[i] = new Lluvia(10 + (i * 20));
         }
         pozo = new Pozo();
+        valla = new Valla();
         nube = new Nube();
         calle = new Calle();
         arbol = new Arbol();
@@ -52,28 +53,32 @@ public class Bosque extends Cuadro {
 
         pasto.dibujarPasto(g, 0, 200, new Color(50, 200, 50), 1.5);
 
-        // agua.dibujarAgua(g, 0, 300, 1.0);
-
-        for (int i = 0; i < lluvia.length; i++) {
-            lluvia[i].dibujarLluvia(g, Color.WHITE, 1.0);
-        }
-
-        luna.dibujarLuna(g, 700, 18, Color.WHITE, cielo, 1.0);
+        luna.dibujarLuna(g, 670, 18, Color.WHITE, cielo, 1.0);
 
         for (int i = 0; i < 3; i++) {
             nube.dibujarNube(g, 50 + (250 * i), 10, colorNube, 1.2);
         }
 
         for (int i = 0; i < 7; i++) {
-            arbol.dibujarArbol(g, 20 + (i * 120), 200, cafe, verdePasto, 1.0);
+            arbol.dibujarArbol(g, 20 + (i * 120), 180, cafe, verdePasto, 1.0);
         }
 
-        pozo.dibujarPozo(g, 350, 320, 1.0);
+        for (int i = 0; i < 5; i++) {
+            arbol.dibujarArbol(g, 60 + (i * 120), 210, cafe, verdePasto, 1.1);
+        }
+
+        pozo.dibujarPozo(g, 350, 280, 1.0);
+
+        valla.dibujarVallas(g, 0, 320, cafe, 1.0, 23);
 
         calle.dibujarCalle(g, 0, 400, 1.0);
 
         carro.dibujarCarro(g);
         carro.desplazar();
+
+        for (int i = 0; i < lluvia.length; i++) {
+            lluvia[i].dibujarLluvia(g, Color.WHITE, 1.0);
+        }
 
     }
 }

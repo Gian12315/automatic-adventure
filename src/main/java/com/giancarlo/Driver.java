@@ -40,7 +40,7 @@ public class Driver extends JFrame {
         cuadros[0] = new Campo();
         cuadros[1] = new Playa();
         cuadros[2] = new Bosque();
-        cuadroActual = cuadros[0];
+        cuadroActual = new Cuadro();
 
         Box botones = Box.createHorizontalBox();
         botones.add(Box.createHorizontalStrut(50));
@@ -59,7 +59,8 @@ public class Driver extends JFrame {
         for (int i = 0; i < 3; i++) {
             panelCuadro.add(cuadros[i], String.valueOf(i));
         }
-        card.show(panelCuadro, "0");
+        panelCuadro.add(cuadroActual, "null");
+        card.show(panelCuadro, "null");
 
         add(panelCuadro, BorderLayout.CENTER);
         add(botones, BorderLayout.SOUTH);
@@ -81,54 +82,16 @@ public class Driver extends JFrame {
     }
 
     public static void main(String[] args) {
-        // JFrame frame = new JFrame();
-        // Cuadro cuadro = new Campo();
-        // frame.setTitle("Casa");
-        // frame.setSize(800, 500);
-        // frame.setLocationRelativeTo(null);
-        // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // frame.add(cuadro);
-        // frame.setVisible(true);
-        // while (true) {
-        // frame.repaint();
-        // try {
-        // Thread.sleep(10);
-        // } catch (Exception e) {
-        // System.err.println("Meh");
-        // }
-        // }
-
-        final Driver driver = new Driver();
-        Timer timer = new Timer(10, new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                driver.cuadroActual.repaint();
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                final Driver driver = new Driver();
+                Timer timer = new Timer(10, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        driver.cuadroActual.repaint();
+                    }
+                });
+                timer.start();
             }
         });
-        timer.start();
-
-        // SwingUtilities.invokeLater(new Runnable() {
-        // public void run() {
-        // // final Driver driver = new Driver();
-        // // Timer timer = new Timer(100, new ActionListener() {
-        // // public void actionPerformed(ActionEvent e) {
-        // // driver.panelCuadro.repaint();
-        // // }
-        // // });
-        // //
-        // SwingWorker worker = new SwingWorker<Void, Void>() {
-        // public Void doInBackground() {
-        // final Driver driver = new Driver();
-        // Timer timer = new Timer(100, new ActionListener() {
-        // public void actionPerformed(ActionEvent e) {
-        // driver.panelCuadro.repaint();
-        // }
-        // });
-        // timer.start();
-        // }
-        // };
-
-        // worker.run();
-        // }
-        // });
     }
 }
