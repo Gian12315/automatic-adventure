@@ -17,14 +17,14 @@ public class Arena {
         }
     }
 
-    public void dibujarArena(Graphics g, int x, int y, Color colorArena, double escala) {
+    public void dibujarArena(Graphics g, int x, int y, double escala) {
         Color tmp = g.getColor();
 
         Graphics2D g2d = (Graphics2D) g;
 
         Color arenaInicial = new Color(255, 255, 0);
         Color arenaFinal = new Color(245, 245, 0);
-        Rectangle2D arena = new Rectangle2D.Double(0, 300, 800, 200);
+        Rectangle2D arena = new Rectangle2D.Double(x, y, (int) (800 * escala), (int) (200 * escala));
 
         g2d.setPaint(new GradientPaint(0, 10, arenaInicial, 8, 0, arenaFinal, true));
         g2d.fill(arena);

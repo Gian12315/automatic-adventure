@@ -39,7 +39,7 @@ public class Driver extends JFrame {
 
         cuadros[0] = new Campo();
         cuadros[1] = new Playa();
-        cuadros[2] = new Cuadro();
+        cuadros[2] = new Bosque();
         cuadroActual = cuadros[0];
 
         Box botones = Box.createHorizontalBox();
@@ -97,7 +97,7 @@ public class Driver extends JFrame {
         // System.err.println("Meh");
         // }
         // }
-        //
+
         final Driver driver = new Driver();
         Timer timer = new Timer(10, new ActionListener() {
             public void actionPerformed(ActionEvent e) {

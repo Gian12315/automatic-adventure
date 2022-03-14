@@ -9,18 +9,12 @@ import javax.swing.JFrame;
 import java.awt.Dimension;
 
 public class Playa extends Cuadro {
-    Color naranja = new Color(248, 154, 43);
-    Color naranjaFuerte = new Color(221, 100, 44);
-    Color cafe = new Color(75, 54, 33);
-    Color verdePasto = new Color(50, 200, 50);
-
     Arena arena;
     Agua agua;
     Olas olas;
     Sol sol;
     Nube nube;
     Barco barco;
-    Casa casa;
     Planta planta;
     Palmera palmera;
     Tapete tapete;
@@ -28,15 +22,12 @@ public class Playa extends Cuadro {
     Persona persona2;
 
     public Playa() {
-        // setPreferredSize(new Dimension(800, 500));
         arena = new Arena();
         agua = new Agua();
-        // olas = new Olas(-400, 1000, 120, 20);
         olas = new Olas(120, 290, 0, 40);
         sol = new Sol();
         nube = new Nube();
         barco = new Barco(100, 80, 200, Color.WHITE, 120);
-        casa = new Casa(naranja, naranjaFuerte, cafe);
         planta = new Planta();
         palmera = new Palmera();
         tapete = new Tapete();
@@ -50,7 +41,7 @@ public class Playa extends Cuadro {
 
         setBackground(Color.CYAN);
 
-        arena.dibujarArena(g, 0, 300, verdePasto, 1.0);
+        arena.dibujarArena(g, 0, 300, 1.0);
 
         agua.dibujarAgua(g, 0, 300, 1.0);
 
