@@ -65,14 +65,11 @@ public class Playa extends Cuadro {
         persona2.desplazar();
         persona2.dibujarPersona(g);
 
-        palmera.dibujarPalmera(g, 60, 300, 1.0);
-        palmera.dibujarPalmera(g, 110, 300, 1.0);
-        palmera.dibujarPalmera(g, 160, 300, 1.0);
-        palmera.dibujarPalmera(g, 210, 300, 1.0);
-        palmera.dibujarPalmera(g, 590, 300, 1.0);
-        palmera.dibujarPalmera(g, 640, 300, 1.0);
-        palmera.dibujarPalmera(g, 690, 300, 1.0);
-        palmera.dibujarPalmera(g, 730, 300, 1.0);
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 2; j++) {
+                palmera.dibujarPalmera(g, 60 + (50 * i) + (530 * j), 300, 1.0);
+            }
+        }
 
         sombrilla.dibujarSombrilla(g, 320, 320, Color.WHITE, Color.LIGHT_GRAY, 1.0);
         tapete.dibujarTapete(g, 300, 370, Color.RED, Color.BLUE, 1.4);

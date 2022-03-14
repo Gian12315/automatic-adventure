@@ -28,7 +28,7 @@ public class Pozo {
         g.drawArc(x + 34, y - 50, 50, 30, 0, 180);
 
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < 4; j++) {
                 g.setColor(Color.LIGHT_GRAY);
                 g.fillRect(x + (30 * i), y + (15 * j), 30, 15);
                 g.setColor(Color.BLACK);
